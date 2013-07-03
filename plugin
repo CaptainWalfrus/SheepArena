@@ -1,0 +1,9 @@
+name: SheepArena
+version: 1.0
+main: me.walrusgames.SheepArena
+authors: [captainwalfrus,simon6689]
+
+commands:
+    sa:
+    description: This is the base command.
+    usage: /<command>
