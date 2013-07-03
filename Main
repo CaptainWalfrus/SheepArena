@@ -19,9 +19,9 @@ Bukkit.getPluginManager().registerEvents(this, this);
   public void onPlayerLogin(PlayerJoinEvent e) {
     Player player = e.getPlayer();
     if ((player.getName().equalsIgnoreCase("CaptainWalfrus")))
-        e.setJoinMessage(ChatColor.AQUA + "[Staff] CaptainWalfrus, has joined the server!");
+        e.setJoinMessage(ChatColor.AQUA + "[Staff] CaptainWalfrus, " + ChaTColor.AQUA + "has joined the server!");
     if ((player.getName().equalsIgnoreCase("simon6689")))
-        e.setJoinMessage(ChatColor.AQUA + "[Staff] simon6689, has joined the server!");
+        e.setJoinMessage(ChatColor.AQUA + "[Staff] " + ChatColor.DARK_RED + " simon6689, " + ChaTColor.AQUA + "has joined the server!");
         }
      }
   //Obviously more will go here, but lets try and make multiple classes to make it clean, and organized..
