@@ -1,0 +1,27 @@
+package me.captainwalfrus.SheepArena;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Main extends JavaPlugin implements Listener{
+  
+@Override
+public void onEnable() {
+Bukkit.getPluginManager().registerEvents(this, this);
+}
+@EventHandler (priority = EventPriority.HIGHEST)
+  public void onPlayerLogin(PlayerJoinEvent e) {
+    Player player = e.getPlayer();
+    if ((player.getName().equalsIgnoreCase("CaptainWalfrus")))
+        e.setJoinMessage(ChatColor.AQUA + "[Staff] CaptainWalfrus, has joined the server!");
+    if ((player.getName().equalsIgnoreCase("simon6689")))
+        e.setJoinMessage(ChatColor.AQUA + "[Staff] simon6689, has joined the server!");
+        }
+     }
+  //Obviously more will go here, but lets try and make multiple classes to make it clean, and organized..
