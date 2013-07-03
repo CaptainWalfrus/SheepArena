@@ -2,6 +2,9 @@ package me.walrusgames.SheepArena;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -9,19 +12,33 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin implements Listener{
+public class Main extends JavaPlugin implements Listener {
   
-@Override
-public void onEnable() {
-Bukkit.getPluginManager().registerEvents(this, this);
+  @Override
+	public void onEnable() {
+		Bukkit.getPluginManager().registerEvents(this, this);
+	}
+	@EventHandler (priority = EventPriority.HIGHEST)
+	public void onPlayerLogin(PlayerJoinEvent event) {
+		Player player = event.getPlayer();
+		
+		if (player.getName().equals("CaptianWalfrus")) {
+			event.setJoinMessage(ChatColor.AQUA + "[Staff] " + ChatColor.RED + "CaptainWalfrus " + ChatColor.AQUA + "has joined the server!");
+		} else if (player.getName().equals("simon6689")) {
+			event.setJoinMessage(ChatColor.AQUA + "[Staff] " + ChatColor.RED + "simon6689 " + ChatColor.AQUA + "has joined the server!");
+		}
+	}
+		
+
+     
+
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		if (cmd.getName().equalsIgnoreCase("sa")) {
+			sender.sendMessage("Yes.");
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
-@EventHandler (priority = EventPriority.HIGHEST)
-  public void onPlayerLogin(PlayerJoinEvent e) {
-    Player player = e.getPlayer();
-    if ((player.getName().equalsIgnoreCase("CaptainWalfrus")))
-        e.setJoinMessage(ChatColor.AQUA + "[Staff] CaptainWalfrus, " + ChaTColor.AQUA + "has joined the server!");
-    if ((player.getName().equalsIgnoreCase("simon6689")))
-        e.setJoinMessage(ChatColor.AQUA + "[Staff] " + ChatColor.DARK_RED + " simon6689, " + ChaTColor.AQUA + "has joined the server!");
-        }
-     }
-  //Obviously more will go here, but lets try and make multiple classes to make it clean, and organized..
+
