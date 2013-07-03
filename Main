@@ -1,4 +1,4 @@
-package me.captainwalfrus.SheepArena;
+package me.walrusgames.SheepArena;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
